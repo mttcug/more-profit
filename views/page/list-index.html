@@ -1,0 +1,47 @@
+{% extends "base/list-base.html" %}
+
+{% block listBody %}
+
+<div class="fixed-func clearfix" id="navwrapper">
+    <div class="nav" id="navscroller">
+        <ul class="nav-ul">
+            {% for category in category_list %}
+            <li class="nav-ul-li"><a id="{{ category.id }}">{{ category.name }}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="content">
+    <div class="baibeiying-list" id="wrapper">
+        <div id="scroller">
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class='swiper-slide'>
+                        <a target='_blank' href='"+a_url+"'>
+                            <img src='"+data.carouse_list[a].img_url+"'/>
+                            <div class='img-title'>"+data.carouse_list[a].title+"</div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="swiper-pagination">
+
+                </div>
+
+            </div>
+            <div class="activity">
+                <img src="imgs/festival_42.png" alt="节日活动" class="little-tip">
+            </div>
+            <div>
+                <ul class="ul-list">
+                </ul>
+                <p id="no-data"
+                   style="display: none;width: 70%;height: 60px;line-height: 60px;text-align: center;position: fixed;bottom: 68px;z-index: 999;background:rgba(0,0,0,0.8);font-size: 30px;border-radius: 30px;color: white;left: 15%;">
+                    没有更多数据了</p>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
