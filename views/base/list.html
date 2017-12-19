@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% block title %}
+    <title>列表页</title>
+    {% endblock %}
+    <!-- <meta content="width=320, initial-scale=0.5, maximum-scale=1, user-scalable=no" name="viewport">-->
+    <meta name="viewport" content="width=640,initial-scale=0.5,maximum-scale=0.5, minimum-scale=0.5,user-scalable=no">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    {% block meta %}
+    {% endblock %}
+    <link rel="stylesheet" href="css/baibeiying.css">
+    <link rel="stylesheet" href="css/swiper-3.3.1.min.css">
+    <!--<script type="text/javascript" src="{{ url_for('indexlist.static',filename='js/fit-iphone.js') }}"></script>-->
+    {% block link %}
+    {% endblock %}
+</head>
+<body>
+<header>
+    <a href=""> <img src="imgs/baibeiying_03.png" alt=""></a>#}
+    <p>百倍赢</p>
+</header>
+
+{% block listBody %}
+{% endblock %}
+
+<!--尾部-->
+<footer>
+    <a href="http://bby.pupuwang.com/detail/?id=1903"><img src="imgs/bbylogo_99.png" alt=""></a>
+</footer>
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/detail.js"></script>
+<!--<script type="text/javascript" src="js/banner.js"></script>-->
+<script type="text/javascript" src="js/swiper-3.3.1.jquery.min.js"></script>
