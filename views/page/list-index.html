@@ -1,47 +1,67 @@
 {% extends "base/list-base.html" %}
 
+{% block link %}
+<link rel="stylesheet" href="css/index.css">
+{% endblock %}
+
 {% block listBody %}
 
-<div class="fixed-func clearfix" id="navwrapper">
-    <div class="nav" id="navscroller">
-        <ul class="nav-ul">
-            {% for category in category_list %}
-            <li class="nav-ul-li"><a id="{{ category.id }}">{{ category.name }}</a></li>
-            {% endfor %}
-        </ul>
-    </div>
+
+<div class="nav" id="navscroller">
+    <ul class="nav-ul">
+        {% for category in category_list %}
+        <li class="nav-ul-li"><a id="{{ category.id }}">{{ category.name }}</a></li>
+        {% endfor %}
+    </ul>
 </div>
+
+
 <div class="content">
-    <div class="baibeiying-list" id="wrapper">
-        <div id="scroller">
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    <div class='swiper-slide'>
-                        <a target='_blank' href='"+a_url+"'>
-                            <img src='"+data.carouse_list[a].img_url+"'/>
-                            <div class='img-title'>"+data.carouse_list[a].title+"</div>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="swiper-pagination">
-
-                </div>
-
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            {% for carouse in carouse_list %}
+            <div class='swiper-slide'>
+                <a target='_blank' href='{{carouse.url}}'>
+                    <img src='{{carouse.img_url}}'/>
+                    <div class='img-title'>{{carouse.title}}</div>
+                </a>
             </div>
-            <div class="activity">
-                <img src="imgs/festival_42.png" alt="节日活动" class="little-tip">
-            </div>
-            <div>
-                <ul class="ul-list">
-                </ul>
-                <p id="no-data"
-                   style="display: none;width: 70%;height: 60px;line-height: 60px;text-align: center;position: fixed;bottom: 68px;z-index: 999;background:rgba(0,0,0,0.8);font-size: 30px;border-radius: 30px;color: white;left: 15%;">
-                    没有更多数据了</p>
-
-            </div>
+            {% endfor %}
         </div>
+
+        <div class="swiper-pagination">
+
+        </div>
+
     </div>
+    <ul class="baibeiying-list" id="wrapper">
+        {% for info in info_list %}
+        <li class='row'>
+            {% if info.img_url != '' %}
+            <a target='_blank' href="{{info.url}}">
+                <img src='{{info.img_url}}' alt='' class='list-left-img'>
+                <div class='count-info' style='width: 75%;'>
+                    <p><!--<img src='imgs/baibeiying_20.png' alt=''>-->
+                        <span>{{info.title}}</span>
+                    </p>
+                </div>
+            </a>
+            {% else %}
+            <a target='_blank' href="{{info.url}}">
+                <div class='count-info' style='width: 100%;'>
+                    <p><!--<img src='imgs/baibeiying_20.png' alt=''>-->
+                        <span>{{info.title}}</span>
+                    </p>
+                </div>
+            </a>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
 </div>
 
+{% endblock %}
+
+{% block script %}
+<script type="text/javascript" src="js/list-index.js"></script>
 {% endblock %}
