@@ -1,5 +1,5 @@
 (function () {
-    console.log("list-index");
+
     var mySwiper = new Swiper('.swiper-container', {
         direction: 'horizontal',
         loop: true,
@@ -8,5 +8,7 @@
         // 如果需要分页器
         pagination: '.swiper-pagination'
     });
+
+    $(".nav-ul-li").eq(0).addClass('selected');
 
 })();

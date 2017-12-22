@@ -13,6 +13,7 @@ body{
 .swiper-slide{
     position: relative;
 }
+
 .swiper-slide .img-title{
     text-align: center;
     position: absolute;
@@ -27,17 +28,18 @@ body{
     width: 100%;
 }
 
-
 #navscroller{
     width: 100%;
     position: fixed;
     top: 0px;
 }
+
 #navscroller ul{
     list-style: none;
     padding: 5px;
     margin: 0px;
 }
+
 #navscroller ul li{
     display: inline-block;
     padding: 5px;
@@ -74,7 +76,8 @@ body{
 }
 .content ul li{
     display: block;
-    padding: 5px;
+    padding: 0px;
+    margin: 0px;
 }
 .content ul a > img{
     width: 20%;
@@ -82,6 +85,9 @@ body{
 }
 .content ul a > img,.content ul a > div{
     display: inline-block;
+}
+.count-info{
+    vertical-align: middle;
 }
 .count-info span{
     width: 100%;
