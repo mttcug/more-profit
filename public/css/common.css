@@ -32,12 +32,14 @@ body{
     width: 100%;
     position: fixed;
     top: 0px;
+    overflow-x: scroll;
 }
 
 #navscroller ul{
     list-style: none;
     padding: 5px;
     margin: 0px;
+    white-space: nowrap;
 }
 
 #navscroller ul li{
@@ -76,7 +78,7 @@ body{
 }
 .content ul li{
     display: block;
-    padding: 0px;
+    padding: 0px 10px;
     margin: 0px;
 }
 .content ul a > img{
@@ -92,7 +94,9 @@ body{
 .count-info span{
     width: 100%;
     display: inline-block;
-    overflow-y: hidden;
+    overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
 }

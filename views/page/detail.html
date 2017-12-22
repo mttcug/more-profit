@@ -4,7 +4,7 @@
 <link rel="stylesheet" href="css/index.css">
 {% endblock %}
 
-{% block detailBody %}
+{% block listBody %}
 
 
 <div class="detail-content">
@@ -34,7 +34,7 @@
             <a class="thumb_tag"></a>
             <div class="thumbed_tag"></div>
             <div class="thumbed_num">{{ thumbed_number }}</div>
-            <input id="is_thumb" hidden="hidden" value="{{ is_thumb|tojson }}">
+            <input id="is_thumb" hidden="hidden" value="{{ is_thumb }}">
         </div>
     </div>
 </div>

@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res, next) {
+    console.log("index");
     res.render('page/list-index', {
         title: 'Express' ,
         category_list:[
@@ -23,18 +24,19 @@ router.get('/', function(req, res, next) {
             {img_url:'imgs/baibeiying_29.png',id:1,url:"http://lalalla",title:"个苟且而温柔个去哦个文瑞去玩儿黑科技阿萨德航空发克里斯多夫嘉实多看风景哈乐山大佛"},
         ],
         info_list:[
-            {img_url:'imgs/baibeiying_29.png',id:1,url:"http://lalalla",title:"深圳南山店海底捞"},
-            {img_url:'',id:1,url:"http://lalalla",title:"个苟且而温柔个去哦个文瑞去玩儿黑科技阿萨德航空发克里斯多夫嘉实多看风景哈乐山大佛"},
-            {img_url:'imgs/baibeiying_29.png',id:1,url:"http://lalalla",title:"深圳南山店海底捞"},
-            {img_url:'',id:1,url:"http://lalalla",title:"河南一步来思考对方"},
-            {img_url:'imgs/baibeiying_29.png',id:1,url:"http://lalalla",title:"个苟且而温柔个去哦个文瑞去玩儿黑科技阿萨德航空发克里斯多夫嘉实多看风景哈乐山大佛"},
-            {img_url:'imgs/baibeiying_29.png',id:1,url:"http://lalalla",title:"个苟且而温柔个去哦个文瑞去玩儿黑科技阿萨德航空发克里斯多夫嘉实多看风景哈乐山大佛"},
+            {img_url:'imgs/baibeiying_29.png',id:1,url:"/detail/256",title:"深圳南山店海底捞"},
+            {img_url:'',id:1,url:"/detail/256",title:"个苟且而温柔个去哦个文瑞去玩儿黑科技阿萨德航空发克里斯多夫嘉实多看风景哈乐山大佛"},
+            {img_url:'imgs/baibeiying_29.png',id:1,url:"/detail/256",title:"深圳南山店海底捞"},
+            {img_url:'',id:1,url:"/detail/256",title:"河南一步来思考对方"},
+            {img_url:'imgs/baibeiying_29.png',id:1,url:"/detail/256",title:"个苟且而温柔个去哦个文瑞去玩儿黑科技阿萨德航空发克里斯多夫嘉实多看风景哈乐山大佛"},
+            {img_url:'imgs/baibeiying_29.png',id:1,url:"/detail/256",title:"个苟且而温柔个去哦个文瑞去玩儿黑科技阿萨德航空发克里斯多夫嘉实多看风景哈乐山大佛"},
 
         ]
     });
 });
 
-router.get('/detail', function(req, res, next) {
+router.get('/detail/:id', function(req, res, next) {
+    console.log("detail:",res);
     res.render('page/detail', {
         title: 'Express' ,
         info:['得意','asdf','asdfasdf','asdfasdf','asdfasdf'],

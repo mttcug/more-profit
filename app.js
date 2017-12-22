@@ -6,9 +6,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var nunjucks=require('nunjucks');
 var Router = express.Router();
-var app = express();
+var router = require('./routes/render');
 
-var router = require('./routes/index');
+var app = express();
 
 
 
@@ -22,26 +22,24 @@ nunjucks.configure( 'views', { // 设置模板文件的目录，为views
 });
 app.set('view engine', 'html');  //设置模板引擎
 
+
+
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-/*app.use(express.static('./'));*/   //设置根目录
 app.use(express.static(path.join(__dirname, 'public')));
-
-/*router(app);*/
-/*app.use('/', router.routes);*/
-Router.use("/",router);
+app.use(router);
 
 
 // catch 404 and forward to error handler
-/*app.use(function(req, res, next) {
+app.use(function(req, res, next) {
     var err = new Error('Not Found');
     err.status = 404;
     next(err);
-});*/
+});
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -51,7 +49,7 @@ app.use(function(err, req, res, next) {
 
     // render the error page
     res.status(err.status || 500);
-    res.render('error');
+    res.render('views/page/error.html');
     console.log("错误",err);
 });
 
